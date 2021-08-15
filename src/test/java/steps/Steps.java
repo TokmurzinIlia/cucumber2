@@ -25,59 +25,35 @@ public class Steps {
     public void enterUsername(String text) {
         $(By.id("user-name")).setValue(text);
 
-        // для демонстрации работы теста
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @И("^в поле Password введено значение \"([^\"]*)\"$")
     public void enterPassword(String text) {
         $(By.id("password")).setValue(text);
 
-        // для демонстрации работы теста
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @И("^выполнено нажатие на кнопку \"([^\"]*)\"$")
     public void clickOnButton(String text) {
         $(By.cssSelector("input[value='" + text + "']")).click();
 
-        // для демонстрации работы теста
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Тогда("^происходит авторизация и переход на страницу покупок \"([^\"]*)\"$")
     public void checkLinkName(String link) {
         Assertions.assertEquals("PRODUCTS", $(".title").getText(), "User is not log in");
         // для демонстрации работы теста
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Тогда("^выполнено нажатие на ссылку \"([^\"]*)\"$")
     public void clickOnLink(String link) {
         $(By.xpath("//*[contains(text(), \"" + link + "\")]")).click();
 
-        // для демонстрации работы теста
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Тогда("^цена объекта равна \"([^\"]*)\"$")
@@ -85,12 +61,7 @@ public class Steps {
         String actualPriceInfo = $(By.className("inventory_details_price")).getText();
         assertTrue(actualPriceInfo.contains(price), "Актуальная и ожидаемая цена не совпадают");
 
-        // для демонстрации работы теста
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
 }
